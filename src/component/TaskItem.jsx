@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import "../styles/TaskItem.css"
 
-export const TaskItem = () => {
+const TaskItem = ({ individual_task }) => {
   return (
-    <div>TaskItem</div>
-  )
-}
+      <li className={`task-status-${individual_task.completed ? "completed" : "pending"}`}>
+        {individual_task.title} - {individual_task.completed ? "Completed" : "Pending"}
+      </li>
+  );
+};
+
+export default TaskItem;
