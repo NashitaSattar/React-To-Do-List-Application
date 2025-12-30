@@ -1,0 +1,13 @@
+.submit-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.disabledButton {
+    background-color: crimson;
+}
+
+.enabledButton{
+    background-color: chartreuse;
+}

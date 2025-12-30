@@ -1,12 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import { getTasks, createTask, updateTask, deleteTask } from '../service/taskService'
 import TaskItem from '../component/TaskItem'
 
 export const TaskList = () => {
   const [tasks, setTasks] = useState([])
-  const [title, setTitle] = useState("")
-  const [status, setStatus] = useState(false)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
 
@@ -48,8 +47,8 @@ export const TaskList = () => {
         </p>
       }
       <div>
-        <hr/>
         <h2>My Tasks</h2>
+        <Link to="/add-task"><button>Add Task</button></Link>
         {tasks.length === 0 &&
           <p>No tasks available today</p>
         }
