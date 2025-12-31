@@ -101,8 +101,8 @@ export const TaskDetails = () => {
         />
 
         <div className="buttons-container">
-        <button className={task.completed || disabled ? "disable-button" : "update-button"} onClick={handleUpdateTask} disabled={task.completed || disabled}>Mark as Done</button>
-        <button className="delete-button" onClick={handleDeleteTask}>Delete</button>
+            <button className={task.completed || disabled ? "disable-button" : "update-button"} onClick={handleUpdateTask} disabled={task.completed || disabled}>Mark as Done</button>
+            <button className="delete-button" onClick={handleDeleteTask}>Delete</button>
         </div>
     </>
   )
