@@ -1,0 +1,20 @@
+.delete-button{
+    background-color: crimson;
+    margin-left: 20px;
+}
+
+.update-button{
+    background-color: rgb(122, 182, 32);
+}
+
+.disable-button{
+    background-color: rgb(69, 79, 55);
+}
+
+.buttons-container{
+    direction: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}

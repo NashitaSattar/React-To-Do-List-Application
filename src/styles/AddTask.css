@@ -4,10 +4,10 @@
     gap: 15px;
 }
 
-.disabledButton {
+.disabled-button {
     background-color: crimson;
 }
 
-.enabledButton{
+.enabled-button{
     background-color: chartreuse;
 }

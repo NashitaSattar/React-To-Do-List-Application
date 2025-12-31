@@ -20,7 +20,7 @@ export const AddTask = () => {
   const handleAddTask = async (e) => {
     e.preventDefault();
 
-    if (!title.trim()) {
+    if (!title) {
       setError("Title is required");
       return;
     }
@@ -62,17 +62,17 @@ export const AddTask = () => {
         <input
           placeholder="Title of Task"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value.trimStart())}
         />
         {error && <p style={{ color: "red" }}>{error}</p>}
         <input
           placeholder="Description of Task"
           value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={(e) => setDescription(e.target.value.trimStart())}
         />
         <button
           type="submit"
-          className={title.length === 0 ? "disabledButton" : "enabledButton"}
+          className={title.length === 0 ? "disabled-button" : "enabled-button"}
           >
           Add New Task
         </button>
