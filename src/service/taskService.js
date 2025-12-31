@@ -15,11 +15,11 @@ export const createTask = (taskData) => {
     return axiosInstance.post("/tasks", taskData);
 }
 
-// Put - update existing task
+// Patch - update existing task
 export const updateTask = (id, updatedTaskData) => {
     console.log("id : ", id)
     console.log("updatedTaskData : ", updatedTaskData)
-    return axiosInstance.put(`/tasks/${id}`, updatedTaskData);
+    return axiosInstance.patch(`/tasks/${id}`, updatedTaskData);
 } 
 
 // Delete - Remove existing task

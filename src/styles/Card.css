@@ -1,7 +1,21 @@
-.card{
-    margin-top: 10px;
-}
-
 .card h2{
     color: rgb(43, 226, 98);
+    margin: 0px;
 }
+
+.card p{
+    margin: 5px;
+}
+
+.card btn{
+    margin: 0px;
+}
+
+.update-button{
+    background-color: rgb(122, 182, 32);
+}
+
+.disable-button{
+    background-color: rgb(69, 79, 55);
+}
+

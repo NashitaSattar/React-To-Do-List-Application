@@ -52,7 +52,7 @@ export const TaskList = () => {
         {tasks.length === 0 &&
           <p>No tasks available today</p>
         }
-        {tasks.every(task => task.completed) &&
+        {tasks.length > 0 && tasks.every(task => task.completed) &&
           <p>🎉 All tasks completed!</p>
         }
         <ul>

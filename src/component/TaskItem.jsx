@@ -7,7 +7,7 @@ const TaskItem = ({ individual_task }) => {
     <li className={`task-status-${individual_task.completed ? "completed" : "pending"}`}>
       {individual_task.title}
       {" ---> "}
-      {individual_task.completed ? "Completed" : "Pending"}
+      {individual_task.completed ? "✅ Completed" : "Pending"}
 
     </li>
   );

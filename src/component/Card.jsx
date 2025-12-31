@@ -11,7 +11,7 @@ function Card({ title, description, date, completed }) {
 
       <p>Created Date: {date}</p>
 
-      <p>Current Status: {completed ? "Completed" : "Pending"}</p>
+      <p>Current Status: {completed ? "✅ Completed" : "Pending"}</p>
     </div>
   );
 }
