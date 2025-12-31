@@ -57,8 +57,11 @@ export const TaskList = () => {
         }
         <ul>
           {tasks.map(task => (
-            <TaskItem key={task.id} individual_task={task} />
-          ))}
+            <Link key={task.id} to={`/tasks/${task.id}`}>
+            <TaskItem individual_task={task} />
+            </Link>
+          ))
+          }
         </ul>
       </div>
     </>

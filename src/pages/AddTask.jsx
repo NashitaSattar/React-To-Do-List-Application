@@ -55,6 +55,7 @@ export const AddTask = () => {
 
   return (
     <>
+      <Link to="/tasks"><button>Back to My Tasks</button></Link>
       {loading && <p>Loading...</p>}
       <h2>Add Task</h2>
       <form onSubmit={handleAddTask} className="submit-form">

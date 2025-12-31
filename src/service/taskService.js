@@ -5,6 +5,11 @@ export const getTasks = () =>{
     return axiosInstance.get("/tasks");
 }
 
+// GET - fetch task by id
+export const getTaskById = (id) =>{
+    return axiosInstance.get(`/tasks/${id}`);
+}
+
 // POST - create a new task
 export const createTask = (taskData) => {
     return axiosInstance.post("/tasks", taskData);

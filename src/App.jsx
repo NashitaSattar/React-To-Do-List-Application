@@ -5,6 +5,7 @@ import {TaskList} from "./pages/TaskList"
 import {AddTask} from "./pages/AddTask"
 import {Header} from "./component/Header"
 import {Footer} from "./component/Footer"
+import { TaskDetails } from './pages/TaskDetails'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/tasks" element={<TaskList/>} />
           <Route path="/add-task" element={<AddTask/>} />
+          <Route path="/tasks/:id" element={<TaskDetails/>} />
         </Routes>
         {<Footer/>}
       </BrowserRouter>
