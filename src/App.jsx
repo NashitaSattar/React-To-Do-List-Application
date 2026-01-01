@@ -6,20 +6,45 @@ import {AddTask} from "./pages/AddTask"
 import {Header} from "./component/Header"
 import {Footer} from "./component/Footer"
 import { TaskDetails } from './pages/TaskDetails'
+import { Login } from './pages/Login'
+import { Dashboard } from './pages/Dashboard'
+import { AuthProvider } from './context/AuthContext'
+import ProtectedRoute from './component/ProtectedRoute'
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        {<Header/>}
-        <Routes>
-          <Route path="/tasks" element={<TaskList/>} />
-          <Route path="/add-task" element={<AddTask/>} />
-          <Route path="/tasks/:id" element={<TaskDetails/>} />
-        </Routes>
-        {<Footer/>}
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header/>
+          <Routes>
+            <Route path="/" element={<Login/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/dashboard" element={
+              <ProtectedRoute>
+                <Dashboard/>
+              </ProtectedRoute>
+              } />
+            <Route path="/tasks" element={
+              <ProtectedRoute>
+                <TaskList/>
+              </ProtectedRoute>
+              } />
+            <Route path="/add-task" element={
+              <ProtectedRoute>
+                <AddTask/>
+              </ProtectedRoute>
+              } />
+            <Route path="/tasks/:id" element={
+              <ProtectedRoute>
+                <TaskDetails/>
+              </ProtectedRoute>
+              } />
+          </Routes>
+          <Footer/>
+        </BrowserRouter>
+      </AuthProvider>
     </>
   )
 }
