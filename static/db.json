@@ -20,27 +20,6 @@
       "completed": false,
       "description": "Third Task",
       "date": "12/30/2025"
-    },
-    {
-      "id": "d637",
-      "title": "Task Test",
-      "description": "Description",
-      "completed": false,
-      "date": "1/2/2026"
-    },
-    {
-      "id": "c50c",
-      "title": "banana",
-      "description": "eat banana",
-      "completed": false,
-      "date": "1/2/2026"
-    },
-    {
-      "id": "aeff",
-      "title": "banana",
-      "description": "",
-      "completed": false,
-      "date": "1/2/2026"
     }
   ]
 }
