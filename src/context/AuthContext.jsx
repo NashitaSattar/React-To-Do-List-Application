@@ -1,4 +1,4 @@
-import { React, createContext, useState } from "react";
+import { React, createContext, useState, useEffect } from "react";
 
 const AuthContext = createContext(null);
 
@@ -6,7 +6,11 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const login = (username) => {
-    setUser({ username });
+    const today = new Date();
+    const currentDate = today.toLocaleDateString();
+    const loggedInUser = { username, currentDate };
+    setUser(loggedInUser);
+    console.log(loggedInUser);
   };
 
   const logout = () => {

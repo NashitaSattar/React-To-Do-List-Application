@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { useParams } from 'react-router'
 import { useState, useEffect } from 'react'
 import { getTasks, createTask, updateTask, deleteTask } from '../service/taskService'
@@ -66,7 +66,7 @@ export const TaskDetails = () => {
             await deleteTask(id)
             setSuccess("Task deleted successfully 🚀")
             setTimeout(() => {
-                navigate("/tasks")
+                navigate("../tasks")
             }, 3000);
 
         } catch (error) {
@@ -92,7 +92,7 @@ export const TaskDetails = () => {
             {success}
             </p>}
 
-        <Link to="/tasks"><button>Back to My Tasks</button></Link>
+        <NavLink to="/dashboard/tasks"><button>Back to My Tasks</button></NavLink>
         <Card
             title={task.title}
             description={task.description}

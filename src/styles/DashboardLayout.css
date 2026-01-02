@@ -1,0 +1,25 @@
+.DashBoardLayout a.link-active {
+    color: greenyellow;
+}
+
+.DashBoardLayout a.link-inactive {
+    color: rgb(229, 29, 29);
+}
+
+.DashBoardLayout ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 20px;
+    padding: 0px;       
+    margin: 0px;
+    background-color: rgb(74, 74, 71);
+    margin-bottom: 20px;
+    
+}
+
+.DashBoardLayout li{
+    display: flex;
+}
+

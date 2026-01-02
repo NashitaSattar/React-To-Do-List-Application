@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { createTask } from '../service/taskService';
 import "../styles/AddTask.css";
 
@@ -12,10 +12,7 @@ export const AddTask = () => {
   const navigate = useNavigate();
 
   const today = new Date();
-  const month = today.getMonth()+1;
-  const year = today.getFullYear();
-  const date = today. getDate();
-  const currentDate = month + "/" + date + "/" + year;
+  const currentDate = today.toLocaleDateString()
 
   const handleAddTask = async (e) => {
     e.preventDefault();
@@ -41,7 +38,7 @@ export const AddTask = () => {
       setTitle("");
       setDescription("");
       setSuccess("Submission Successful");
-      navigate("/tasks");
+      navigate("../tasks");
 
     } catch (err) {
       setError("Failed to add task");
@@ -55,7 +52,7 @@ export const AddTask = () => {
 
   return (
     <>
-      <Link to="/tasks"><button>Back to My Tasks</button></Link>
+      <NavLink to="/dashboard/tasks"><button>Back to My Tasks</button></NavLink>
       {loading && <p>Loading...</p>}
       <h2>Add Task</h2>
       <form onSubmit={handleAddTask} className="submit-form">

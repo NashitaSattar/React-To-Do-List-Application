@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { getTasks, createTask, updateTask, deleteTask } from '../service/taskService'
+import { NavLink } from 'react-router-dom'
+import { getTasks } from '../service/taskService'
 import TaskItem from '../component/TaskItem'
 
 export const TaskList = () => {
@@ -48,7 +48,7 @@ export const TaskList = () => {
       }
       <div>
         <h2>My Tasks</h2>
-        <Link to="/add-task"><button>Add Task</button></Link>
+        <NavLink to="/dashboard/add-task"><button>Add Task</button></NavLink>
         {tasks.length === 0 &&
           <p>No tasks available today</p>
         }
@@ -57,9 +57,9 @@ export const TaskList = () => {
         }
         <ul>
           {tasks.map(task => (
-            <Link key={task.id} to={`/tasks/${task.id}`}>
+            <NavLink key={task.id} to={`/dashboard/tasks/${task.id}`}>
             <TaskItem individual_task={task} />
-            </Link>
+            </NavLink>
           ))
           }
         </ul>
