@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom'
 import { createTask } from '../service/taskService';
+import { useTheme } from '../context/ThemeContext';
 import "../styles/AddTask.css";
 
 export const AddTask = () => {
+  const { theme } = useTheme();
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
@@ -51,7 +54,7 @@ export const AddTask = () => {
   };
 
   return (
-    <>
+    <div className={`App ${theme}`}>
       <NavLink to="/dashboard/tasks"><button>Back to My Tasks</button></NavLink>
       {loading && <p>Loading...</p>}
       <h2>Add Task</h2>
@@ -75,6 +78,6 @@ export const AddTask = () => {
         </button>
         <p>{success}</p>
       </form>
-    </>
+    </div>
   );
 };

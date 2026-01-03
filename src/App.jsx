@@ -11,12 +11,14 @@ import { DashBoardTasks } from './pages/DashBoardTasks'
 import { UserProfile } from './pages/UserProfile'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './component/ProtectedRoute'
+import { ThemeProvider} from './context/ThemeContext';
+import "./styles/Theme.css"
 
 function App() {
-
   return (
-    <>
-      <AuthProvider>
+    <ThemeProvider>
+      <div className={"App"}>  
+        <AuthProvider>
         <BrowserRouter>
           <Header/>
           <Routes>
@@ -32,12 +34,13 @@ function App() {
               <Route path="add-task" element={<AddTask/>} />
               <Route path="tasks/:id" element={<TaskDetails/>} />
             </Route>
-          </Routes>
+            </Routes>
           <Footer/>
         </BrowserRouter>
-      </AuthProvider>
-    </>
-  )
+        </AuthProvider>
+      </div>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

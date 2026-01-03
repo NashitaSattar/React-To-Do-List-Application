@@ -4,11 +4,14 @@ import { useParams } from 'react-router'
 import { useState, useEffect } from 'react'
 import { getTasks, createTask, updateTask, deleteTask } from '../service/taskService'
 import { getTaskById } from '../service/taskService'
+import { useTheme } from '../context/ThemeContext';
 import Card from "../component/Card";
 import "../styles/TaskDetails.css"
 
 
 export const TaskDetails = () => {
+    const { theme } = useTheme();
+
     const {id} = useParams();
     const [task, setTask] = useState([])
     const [loading, setLoading] = useState(true)
@@ -77,7 +80,7 @@ export const TaskDetails = () => {
     }
 
   return (
-    <>
+    <div className={`App ${theme}`}>
         {loading && 
             <p>
             Loading...
@@ -104,6 +107,6 @@ export const TaskDetails = () => {
             <button className={task.completed || disabled ? "disable-button" : "update-button"} onClick={handleUpdateTask} disabled={task.completed || disabled}>Mark as Done</button>
             <button className="delete-button" onClick={handleDeleteTask}>Delete</button>
         </div>
-    </>
+    </div>
   )
 }

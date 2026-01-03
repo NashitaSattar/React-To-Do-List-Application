@@ -2,8 +2,11 @@ import React from 'react'
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../context/AuthContext'
 import { getTasks } from '../service/taskService';
+import { useTheme } from '../context/ThemeContext';
 
 export const UserProfile = () => {
+    const { theme } = useTheme();
+
     const { user } = useContext(AuthContext);
     const response = getTasks();
     const [error, setError] = useState("")
@@ -31,7 +34,7 @@ export const UserProfile = () => {
 
 
   return (
-    <>
+    <div className={`App ${theme}`}>
         <h3>My Profile</h3>
         {error && 
             <p style={{color: "red"}}>
@@ -42,6 +45,6 @@ export const UserProfile = () => {
         <p>Login Date: {user.currentDate}</p>
         <p>Total Tasks: {allTasks}</p>
         <p>Tasks Completed: {completedTasks}</p>
-    </>
+    </div>
   )
 }

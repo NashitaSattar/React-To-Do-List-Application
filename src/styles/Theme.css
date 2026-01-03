@@ -1,0 +1,61 @@
+.App.light { 
+  background-color: white; 
+  color: black; 
+} 
+
+.App.light input{ 
+  background-color: white; 
+  color: black; 
+} 
+
+.App.light p{ 
+  font-weight: bold; 
+} 
+
+.App.light input{ 
+  background-color: white; 
+  color: black; 
+  border: 2px solid black; 
+} 
+
+.App.light input::placeholder{ 
+  font-weight: bold; 
+  color:black 
+} 
+
+.App.light button{ 
+  background-color: black; 
+  color: white; 
+} 
+.App.light hr{ 
+  color: black;
+} 
+
+.App.dark { 
+  background-color: black; 
+  color: white; 
+} 
+
+.App.dark input{ 
+  background-color: black; 
+  color: white; 
+  border: 2px solid white; 
+} 
+
+.App.dark input::placeholder{ 
+  font-weight: bold; 
+  color:white 
+} 
+
+.App.dark p{ 
+  font-weight: bold; 
+} 
+
+.App.dark button{ 
+  background-color: white; 
+  color: black; 
+}
+
+.App.dark hr{ 
+  color: white;
+} 

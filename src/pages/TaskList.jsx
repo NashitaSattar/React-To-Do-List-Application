@@ -2,10 +2,13 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { getTasks } from '../service/taskService'
+import { useTheme } from '../context/ThemeContext';
 import TaskItem from '../component/TaskItem'
 import "../styles/TaskList.css"
 
 export const TaskList = () => {
+  const { theme } = useTheme();
+  
   const [tasks, setTasks] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
@@ -69,7 +72,7 @@ export const TaskList = () => {
     }
 
   return (
-    <>
+    <div className={`App ${theme}`}>
       {loading && 
         <p>
           Loading...
@@ -107,6 +110,6 @@ export const TaskList = () => {
           }
         </ul>
       </div>
-    </>
+    </div>
   )
 }

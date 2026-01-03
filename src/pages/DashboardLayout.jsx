@@ -3,12 +3,14 @@ import { useContext } from 'react';
 import AuthContext from '../context/AuthContext'
 import { Navigate, NavLink, Outlet } from 'react-router-dom';
 import "../styles/DashBoardLayout.css"
+import { useTheme } from '../context/ThemeContext';
 
 export const DashboardLayout = () => {
+  const { theme } = useTheme();
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <>
+    <div className={`App ${theme}`}>
       <h2>Dashboard</h2>
       <p>Welcome {user.username}!</p>
       <nav className="DashBoardLayout">
@@ -27,7 +29,7 @@ export const DashboardLayout = () => {
       </main>
 
       <button onClick={logout}>Log Out</button>
-    </>
+    </div>
 
   )
 }
