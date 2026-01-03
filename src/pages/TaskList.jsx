@@ -48,6 +48,7 @@ export const TaskList = () => {
       const searchTerm = searchRef.current.value.trim().toLowerCase();
 
       if (searchTerm.length === 0){
+        setHelper("")
         setTasks(allTasks)
         return;
       }
@@ -89,10 +90,11 @@ export const TaskList = () => {
           <div className="search-bar-container">
             <input
             ref={searchRef}
+            onKeyUp={handleSearch}
             type="text"
             placeholder="Search Tasks"
             />
-            <button onClick={handleSearch}>Search</button></div>
+            </div>
             {helper && <p style={{ color: "red" }}>{helper}</p>}
           </div>
         {tasks.length === 0 &&
