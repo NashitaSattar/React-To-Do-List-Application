@@ -12,10 +12,11 @@
     justify-content: center;
     align-items: center;
     list-style-type: none;
+    gap: 10px;
     padding: 0px;       
     margin: 0px;
     background-color: rgb(233, 239, 191);
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     
 }
 

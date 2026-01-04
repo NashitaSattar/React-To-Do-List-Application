@@ -43,48 +43,6 @@
       "type": "❌",
       "description": "Task is deleted",
       "timestamp": "2026-01-04T01:52:28.696Z"
-    },
-    {
-      "id": "764c",
-      "title": "Helllo",
-      "type": "➕",
-      "description": "Task is created",
-      "timestamp": "2026-01-04T01:56:03.682Z"
-    },
-    {
-      "id": "764c",
-      "title": "Helllo",
-      "type": "✏️",
-      "description": "Task is updated",
-      "timestamp": "2026-01-04T02:42:22.690Z"
-    },
-    {
-      "id": "71df",
-      "title": "Testing Cycle",
-      "type": "➕",
-      "description": "Task is created",
-      "timestamp": "2026-01-04T02:42:44.770Z"
-    },
-    {
-      "id": "71df",
-      "title": "Testing Cycle",
-      "type": "✏️",
-      "description": "Task is updated",
-      "timestamp": "2026-01-04T02:42:49.541Z"
-    },
-    {
-      "id": "71df",
-      "title": "Testing Cycle",
-      "type": "❌",
-      "description": "Task is deleted",
-      "timestamp": "2026-01-04T02:42:54.268Z"
-    },
-    {
-      "id": "764c",
-      "title": "Helllo",
-      "type": "❌",
-      "description": "Task is deleted",
-      "timestamp": "2026-01-04T02:43:36.156Z"
     }
   ]
 }

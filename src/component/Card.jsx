@@ -7,7 +7,7 @@ function Card({ title, description, date, completed }) {
 
       <p>Task Title: {title}</p>
 
-      {description && (<p>Task Description: {description}</p>)}
+      <p>Task Description: {description ? description : ""}</p>
 
       <p>Created Date: {date}</p>
 

@@ -1,13 +1,19 @@
-.submit-form{
+.App .submit-form{
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
 .disabled-button {
-    background-color: crimson;
+  background-color: crimson !important;
+  color: white !important;
 }
 
-.enabled-button{
-    background-color: green;
+.enabled-button {
+  background-color: green !important;
+  color: white !important;
+}
+
+.enabled-button:hover {
+  background-color: yellowgreen !important;
 }

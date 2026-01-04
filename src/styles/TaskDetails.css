@@ -1,14 +1,17 @@
 .delete-button{
-    background-color: crimson;
+    background-color: crimson !important;
+    color: white !important;
     margin-left: 20px;
 }
 
 .update-button{
-    background-color: green;
+    background-color: green !important;
+     color: white !important;
 }
 
 .disable-button{
-    background-color: rgb(69, 79, 55);
+    background-color: rgb(69, 79, 55) !important;
+     color: white !important;
 }
 
 .buttons-container{
