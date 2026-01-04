@@ -8,6 +8,7 @@ import { TaskDetails } from './pages/TaskDetails'
 import { Login } from './pages/Login'
 import { DashboardLayout } from './pages/DashboardLayout'
 import { DashBoardTasks } from './pages/DashBoardTasks'
+import { ActivityHistory } from './pages/ActivityHistory'
 import { UserProfile } from './pages/UserProfile'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './component/ProtectedRoute'
@@ -30,6 +31,7 @@ function App() {
               </ProtectedRoute>
               }>
               <Route path="tasks" element={<DashBoardTasks/>} />
+              <Route path="activity" element={<ActivityHistory/>} />
               <Route path="profile" element={<UserProfile/>} />
               <Route path="add-task" element={<AddTask/>} />
               <Route path="tasks/:id" element={<TaskDetails/>} />

@@ -26,3 +26,13 @@ export const updateTask = (id, updatedTaskData) => {
 export const deleteTask = (id) => {
     return axiosInstance.delete(`/tasks/${id}`);
 }
+
+// POST - create a new activity
+export const createActivity = (activityData) => {
+    return axiosInstance.post("/activities", activityData);
+}
+
+// GET - fetch all activities
+export const getActivities = () =>{
+    return axiosInstance.get("/activities");
+}

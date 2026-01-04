@@ -76,6 +76,24 @@
   padding: 0px;
 }
 
+.App pre{
+  margin: 0px;
+  padding: 0px;
+}
+
+.App li{
+  margin: 5px auto;
+  text-align: center;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+}
+
+
 
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom'
-import { createTask } from '../service/taskService';
+import { createTask, createActivity } from '../service/taskService';
 import { useTheme } from '../context/ThemeContext';
 import "../styles/AddTask.css";
 
@@ -36,7 +36,22 @@ export const AddTask = () => {
         date: currentDate
 
       };
-      await createTask(newTask);
+      const taskResponse = await createTask(newTask);
+      const createdTask = taskResponse.data;
+
+      const newActivity = {
+        id: createdTask.id,
+        title: createdTask.title,
+        type: "➕",
+        description: "Task is created",
+        timestamp: today
+
+      };
+
+      if (!newActivity.id || !newActivity.title) {
+        throw new Error("Invalid activity data");
+      }
+      await createActivity(newActivity);
 
       setTitle("");
       setDescription("");

@@ -8,14 +8,14 @@
 
 .DashBoardLayout ul{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     list-style-type: none;
-    gap: 20px;
     padding: 0px;       
     margin: 0px;
     background-color: rgb(233, 239, 191);
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     
 }
 

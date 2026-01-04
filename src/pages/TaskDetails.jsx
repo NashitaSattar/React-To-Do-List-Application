@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import { useParams } from 'react-router'
 import { useState, useEffect } from 'react'
-import { getTasks, createTask, updateTask, deleteTask } from '../service/taskService'
+import { updateTask, deleteTask, createActivity } from '../service/taskService'
 import { getTaskById } from '../service/taskService'
 import { useTheme } from '../context/ThemeContext';
 import Card from "../component/Card";
@@ -19,6 +19,8 @@ export const TaskDetails = () => {
     const [disabled, setDisabled] = useState(false)
     const [success, setSuccess] = useState("")
     const navigate = useNavigate();
+
+    const today = new Date();
 
   // Runs once to fetch task from database with id
   useEffect(() => {
@@ -46,11 +48,24 @@ export const TaskDetails = () => {
             ...task,
             completed: true
         }
+
+        const newUpdatedActivity ={
+            id: id,
+            title: task.title,
+            type: "✏️",
+            description: "Task is updated",
+            timestamp: today
+        }
+
         try {
             setLoading(true);
             await updateTask(id, updatedTask)
+            if (!newUpdatedActivity.id || !newUpdatedActivity.title) {
+                throw new Error("Invalid activity data");
+            }
             setTask(updatedTask)
             setDisabled(true)
+            await createActivity(newUpdatedActivity)
         } catch (error) {
             setError("Error occured when updating task 😢")
         } finally {
@@ -62,12 +77,25 @@ export const TaskDetails = () => {
         const result = window.confirm("Are you sure you want to delete this user?")
         if (!result) {
             return;
-    }
+        }
+
+        const newDeletedActivity ={
+            id: id,
+            title: task.title,
+            type: "❌",
+            description: "Task is deleted",
+            timestamp: today
+        }
+
         try {
             setLoading(true);
             console.log("Task Deleted")
             await deleteTask(id)
+            if (!newDeletedActivity.id || !newDeletedActivity.title) {
+                throw new Error("Invalid activity data");
+            }
             setSuccess("Task deleted successfully 🚀")
+            await createActivity(newDeletedActivity)
             setTimeout(() => {
                 navigate("../tasks")
             }, 3000);

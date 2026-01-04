@@ -15,6 +15,9 @@ export const DashboardLayout = () => {
       <p>Welcome {user.username}!</p>
       <nav className="DashBoardLayout">
         <ul>
+          <li><NavLink to="activity" className={({ isActive }) => (
+                    isActive ? "link-active" : "link-inactive"
+                )}>Activity</NavLink></li>
           <li><NavLink to="tasks" className={({ isActive }) => (
                     isActive ? "link-active" : "link-inactive"
                 )}>Tasks</NavLink></li>
