@@ -1,4 +1,4 @@
-# This is a Daily Task Tracker/To-Do List application that uses React with JSON Server backend. 
+## This is a Daily Task Tracker/To-Do List application that uses React with JSON Server backend. 
 
 ## Includes
 ### •	Authentication
@@ -7,7 +7,7 @@
 ### •	Activity Log to track tasks
 ### •	Dashboard to Track Task Statistics
 
-##Tech Stack:
+## Tech Stack:
 ### •	React 18+
 ### •	React Router v6+
 ### •	Axios (for HTTP requests)
