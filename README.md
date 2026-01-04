@@ -1,6 +1,6 @@
 ## This is a Daily Task Tracker/To-Do List application that uses React with JSON Server backend. 
 
- Includes
+### Includes
  - Authentication
  -	Dark/Light Theme Toggling
  -	Search Bar for finding tasks
